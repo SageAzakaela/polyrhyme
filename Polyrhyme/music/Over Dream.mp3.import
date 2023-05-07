@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Over Dream.mp3-540854a584b0f8f86d56f68e30ad5b62.mp3str"
+
+[deps]
+
+source_file="res://music/Over Dream.mp3"
+dest_files=[ "res://.import/Over Dream.mp3-540854a584b0f8f86d56f68e30ad5b62.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

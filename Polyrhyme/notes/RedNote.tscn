@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Diamond2.png" type="Texture" id=1]
+[ext_resource path="res://notes/Note.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 60.0333
+
+[node name="RedNote" type="Sprite"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 200, 268 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 1 )
+
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

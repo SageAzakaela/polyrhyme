@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/RollTheDice_Instrumental.mp3-9edaa60b1d8f225557d7358360fe147f.mp3str"
+
+[deps]
+
+source_file="res://music/RollTheDice_Instrumental.mp3"
+dest_files=[ "res://.import/RollTheDice_Instrumental.mp3-9edaa60b1d8f225557d7358360fe147f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

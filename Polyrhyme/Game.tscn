@@ -1,0 +1,294 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Diamond.png" type="Texture" id=1]
+[ext_resource path="res://Game.gd" type="Script" id=2]
+[ext_resource path="res://music/Nitro.mp3" type="AudioStream" id=3]
+[ext_resource path="res://music/TRACK_4-2_LEAVE_NONE_BEHIND.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Diamond2.png" type="Texture" id=5]
+[ext_resource path="res://music/Over Dream.mp3" type="AudioStream" id=6]
+[ext_resource path="res://music/Azakaela - Temple of Ice.wav" type="AudioStream" id=7]
+[ext_resource path="res://music/RollTheDice_Instrumental.mp3" type="AudioStream" id=8]
+[ext_resource path="res://music/aexplosive.mp3" type="AudioStream" id=9]
+[ext_resource path="res://music/Azakaela - The Umbra - 13 The Champion of Salt.mp3" type="AudioStream" id=10]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 62.1289
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Targets" type="Node2D" parent="."]
+
+[node name="RedDiamond" type="Sprite" parent="Targets"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 200, 475 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="Targets/RedDiamond" groups=["target"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/RedDiamond/Hitbox"]
+shape = SubResource( 1 )
+
+[node name="Full" type="Sprite" parent="Targets/RedDiamond"]
+visible = false
+texture = ExtResource( 5 )
+
+[node name="YellowDiamond" type="Sprite" parent="Targets"]
+modulate = Color( 1, 0.890196, 0, 1 )
+position = Vector2( 400, 475 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="Targets/YellowDiamond" groups=["target"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/YellowDiamond/Hitbox"]
+shape = SubResource( 1 )
+
+[node name="Full" type="Sprite" parent="Targets/YellowDiamond"]
+visible = false
+texture = ExtResource( 5 )
+
+[node name="GreenDiamond" type="Sprite" parent="Targets"]
+modulate = Color( 0.196078, 1, 0, 1 )
+position = Vector2( 600, 475 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="Targets/GreenDiamond" groups=["target"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/GreenDiamond/Hitbox"]
+shape = SubResource( 1 )
+
+[node name="Full" type="Sprite" parent="Targets/GreenDiamond"]
+visible = false
+texture = ExtResource( 5 )
+
+[node name="BlueDiamond" type="Sprite" parent="Targets"]
+modulate = Color( 0, 0.952941, 1, 1 )
+position = Vector2( 800, 475 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="Targets/BlueDiamond" groups=["target"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/BlueDiamond/Hitbox"]
+shape = SubResource( 1 )
+
+[node name="Full" type="Sprite" parent="Targets/BlueDiamond"]
+visible = false
+texture = ExtResource( 5 )
+
+[node name="Notes" type="Node2D" parent="."]
+position = Vector2( 0, -475 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SongChoosifier" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Song1" type="Button" parent="SongChoosifier"]
+margin_right = 1024.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Temple of Ice"
+
+[node name="RecordSong1" type="Button" parent="SongChoosifier"]
+visible = false
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Record Temple of Ice"
+
+[node name="Song2" type="Button" parent="SongChoosifier"]
+margin_top = 83.0
+margin_right = 1024.0
+margin_bottom = 162.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Nitro"
+
+[node name="RecordSong2" type="Button" parent="SongChoosifier"]
+visible = false
+margin_top = 87.0
+margin_right = 510.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Record Nitro"
+
+[node name="Song3" type="Button" parent="SongChoosifier"]
+margin_top = 166.0
+margin_right = 1024.0
+margin_bottom = 244.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Leave None Behind"
+
+[node name="RecordSong3" type="Button" parent="SongChoosifier"]
+visible = false
+margin_left = 514.0
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 196.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Record Leave None Behind"
+
+[node name="Song4" type="Button" parent="SongChoosifier"]
+margin_top = 248.0
+margin_right = 1024.0
+margin_bottom = 326.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Overdream"
+
+[node name="RecordSong4" type="Button" parent="SongChoosifier"]
+visible = false
+margin_top = 200.0
+margin_right = 510.0
+margin_bottom = 296.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Record Overdream"
+
+[node name="Song5" type="Button" parent="SongChoosifier"]
+margin_top = 330.0
+margin_right = 1024.0
+margin_bottom = 408.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Roll the Dice"
+
+[node name="RecordSong5" type="Button" parent="SongChoosifier"]
+visible = false
+margin_left = 514.0
+margin_top = 239.0
+margin_right = 1024.0
+margin_bottom = 354.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Record roll the Dice"
+
+[node name="Song6" type="Button" parent="SongChoosifier"]
+margin_top = 412.0
+margin_right = 1024.0
+margin_bottom = 490.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Aexplosive"
+
+[node name="RecordSong6" type="Button" parent="SongChoosifier"]
+visible = false
+margin_top = 358.0
+margin_right = 510.0
+margin_bottom = 473.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Record Aexplosive"
+
+[node name="Song7" type="Button" parent="SongChoosifier"]
+margin_top = 494.0
+margin_right = 1024.0
+margin_bottom = 572.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Champion of Salt"
+
+[node name="RecordSong7" type="Button" parent="SongChoosifier"]
+visible = false
+margin_left = 514.0
+margin_top = 444.0
+margin_right = 1024.0
+margin_bottom = 588.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Record Champion of Salt"
+
+[node name="Song1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+
+[node name="Song2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="Song3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -16.0
+
+[node name="Song4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="Song5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -16.0
+
+[node name="Song6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -10.0
+
+[node name="Song7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -16.0
+
+[node name="SongName" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -14.0
+margin_right = 40.0
+align = 1
+
+[node name="Score" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -54.0
+margin_bottom = -40.0
+rect_scale = Vector2( 2, 2 )
+align = 1
+
+[connection signal="area_exited" from="Targets/RedDiamond/Hitbox" to="." method="_on_Hitbox_area_exited"]
+[connection signal="area_exited" from="Targets/YellowDiamond/Hitbox" to="." method="_on_Hitbox_area_exited"]
+[connection signal="area_exited" from="Targets/GreenDiamond/Hitbox" to="." method="_on_Hitbox_area_exited"]
+[connection signal="area_exited" from="Targets/BlueDiamond/Hitbox" to="." method="_on_Hitbox_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="SongChoosifier/Song1" to="." method="_on_Song1_pressed"]
+[connection signal="pressed" from="SongChoosifier/RecordSong1" to="." method="_on_RecordSong1_pressed"]
+[connection signal="pressed" from="SongChoosifier/Song2" to="." method="_on_Song2_pressed"]
+[connection signal="pressed" from="SongChoosifier/RecordSong2" to="." method="_on_RecordSong2_pressed"]
+[connection signal="pressed" from="SongChoosifier/Song3" to="." method="_on_Song3_pressed"]
+[connection signal="pressed" from="SongChoosifier/RecordSong3" to="." method="_on_RecordSong3_pressed"]
+[connection signal="pressed" from="SongChoosifier/Song4" to="." method="_on_Song4_pressed"]
+[connection signal="pressed" from="SongChoosifier/RecordSong4" to="." method="_on_RecordSong4_pressed"]
+[connection signal="pressed" from="SongChoosifier/Song5" to="." method="_on_Song5_pressed"]
+[connection signal="pressed" from="SongChoosifier/RecordSong5" to="." method="_on_RecordSong5_pressed"]
+[connection signal="pressed" from="SongChoosifier/Song6" to="." method="_on_Song6_pressed"]
+[connection signal="pressed" from="SongChoosifier/RecordSong6" to="." method="_on_RecordSong6_pressed"]
+[connection signal="pressed" from="SongChoosifier/Song7" to="." method="_on_Song7_pressed"]
+[connection signal="pressed" from="SongChoosifier/RecordSong7" to="." method="_on_RecordSong7_pressed"]
+[connection signal="finished" from="Song1" to="." method="_on_Song1_finished"]
+[connection signal="finished" from="Song2" to="." method="_on_Song2_finished"]
+[connection signal="finished" from="Song3" to="." method="_on_Song3_finished"]
+[connection signal="finished" from="Song4" to="." method="_on_Song4_finished"]
+[connection signal="finished" from="Song5" to="." method="_on_Song5_finished"]
+[connection signal="finished" from="Song6" to="." method="_on_Song6_finished"]
+[connection signal="finished" from="Song7" to="." method="_on_Song7_finished"]

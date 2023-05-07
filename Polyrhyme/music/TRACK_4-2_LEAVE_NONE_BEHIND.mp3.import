@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/TRACK_4-2_LEAVE_NONE_BEHIND.mp3-c38af88f58a5fae7c6dd5aba05253a20.mp3str"
+
+[deps]
+
+source_file="res://music/TRACK_4-2_LEAVE_NONE_BEHIND.mp3"
+dest_files=[ "res://.import/TRACK_4-2_LEAVE_NONE_BEHIND.mp3-c38af88f58a5fae7c6dd5aba05253a20.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
